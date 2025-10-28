@@ -6,8 +6,6 @@ from db_utils import create_table
 from db_utils import insert_job
 from db_utils import fetch_all_jobs
 
-
-
 create_table()
 
 # Main Title
