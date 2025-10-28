@@ -39,3 +39,11 @@ def fetch_all_jobs():
     rows = cur.fetchall()
     conn.close()
     return rows
+
+def job_stats():
+    conn = create_connection()
+    cur = conn.cursor()
+    cur.execute("SELECT result, COUNT(*) FROM jobs GROUP BY result")
+    result_counts = cur.fetchall()
+    conn.close()
+    return dict(result_counts)
